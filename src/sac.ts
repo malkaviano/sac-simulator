@@ -27,11 +27,7 @@ export class SAC {
     return this.roundTwo(this.amortizacao() + this.jurosSobreSaldoDevedor(n));
   }
 
-<<<<<<< HEAD
   tabela(): Financiamento[] {
-=======
-  tabela(): Financiamento {
->>>>>>> 41c19f74698bf5ab19938fe8e73e78ec772fb5d0
     const f: Financiamento[] = [];
 
     for (let i = 0; i < this.meses; ++i) {
