@@ -1,5 +1,5 @@
 import { should } from 'chai';
-import { SAC, Financiamento } from '../src/sac';
+import { SAC, Financiamento } from '../../src/sac/sac';
 
 should();
 

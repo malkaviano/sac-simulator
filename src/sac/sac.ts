@@ -1,3 +1,5 @@
+import { Numerico } from '../auxiliares/numerico';
+
 export type Financiamento = {
   n: number,
   parcela: number,
@@ -14,17 +16,17 @@ export class SAC {
   }
 
   amortizacao(): number {
-    return this.roundTwo((this.financiado / this.meses));
+    return Numerico.round((this.financiado / this.meses));
   }
 
   jurosSobreSaldoDevedor(parcelasPagas: number): number {
-    return this.roundTwo(
+    return Numerico.round(
       (this.jurosMensalPerc / 100) *
       (this.financiado - (parcelasPagas * this.amortizacao())));
   }
 
   valorParcela(n: number): number {
-    return this.roundTwo(this.amortizacao() + this.jurosSobreSaldoDevedor(n));
+    return Numerico.round(this.amortizacao() + this.jurosSobreSaldoDevedor(n));
   }
 
   tabela(): Financiamento[] {
@@ -44,6 +46,4 @@ export class SAC {
 
     return f;
   }
-
-  private roundTwo(value: number): number { return parseFloat(value.toFixed(2)); }
 }

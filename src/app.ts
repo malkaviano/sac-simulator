@@ -1,4 +1,4 @@
-import { SAC, Financiamento } from './sac';
+import { SAC, Financiamento } from './sac/sac';
 
 const sac = new SAC(110500, 0.6, 360);
 
