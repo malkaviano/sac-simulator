@@ -32,7 +32,7 @@ export class SAC {
   tabela(): Financiamento[] {
     const f: Financiamento[] = [];
 
-    for (let i = 0; i < this.meses; ++i) {
+    for (let i = 0; i < this.meses; i += 1) {
       const num = i + 1;
 
       f.push({
