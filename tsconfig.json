@@ -61,5 +61,8 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
     ,"outDir": "dist",
     "sourceMap": true
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

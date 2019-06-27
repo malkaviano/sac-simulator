@@ -1,2 +1,2 @@
 # tsdbtest
-Simple DB with TS
+SAC Table simulation
