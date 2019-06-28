@@ -21,7 +21,7 @@ describe('TaxaJuros', () => {
 
       const esperado = 0.72;
 
-      resultado.should.be.equal(esperado);
+      resultado.should.be.within(esperado, esperado + 0.1);
     });
   });
 });

@@ -1,11 +1,9 @@
-import { Numerico } from '../auxiliares/numerico';
-
 export type Financiamento = {
-  n: number,
-  parcela: number,
-  amortizacao: number,
-  juros: number,
-  devedor: number,
+  n: string,
+  parcela: string,
+  amortizacao: string,
+  juros: string,
+  devedor: string,
 };
 
 export class SAC {
@@ -16,17 +14,16 @@ export class SAC {
   }
 
   amortizacao(): number {
-    return Numerico.arredondar((this.financiado / this.meses));
+    return (this.financiado / this.meses);
   }
 
   jurosSobreSaldoDevedor(parcelasPagas: number): number {
-    return Numerico.arredondar(
-      (this.jurosMensalPerc / 100) *
-      (this.financiado - (parcelasPagas * this.amortizacao())));
+    return (this.jurosMensalPerc / 100) *
+            (this.financiado - (parcelasPagas * this.amortizacao()));
   }
 
   valorParcela(n: number): number {
-    return Numerico.arredondar(this.amortizacao() + this.jurosSobreSaldoDevedor(n));
+    return this.amortizacao() + this.jurosSobreSaldoDevedor(n);
   }
 
   tabela(): Financiamento[] {
@@ -36,11 +33,11 @@ export class SAC {
       const num = i + 1;
 
       f.push({
-        n: num,
-        parcela: this.valorParcela(i),
-        amortizacao: this.amortizacao(),
-        juros: this.jurosSobreSaldoDevedor(i),
-        devedor: this.financiado - (num * this.amortizacao()),
+        n: num.toString(),
+        parcela: this.valorParcela(i).toFixed(2),
+        amortizacao: this.amortizacao().toFixed(2),
+        juros: this.jurosSobreSaldoDevedor(i).toFixed(2),
+        devedor: (this.financiado - (num * this.amortizacao())).toFixed(2),
       });
     }
 
