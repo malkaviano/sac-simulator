@@ -7,21 +7,21 @@ should();
 describe('TaxaJuros', () => {
   describe('.norminalParaEfetivo', () => {
     it('retorna 3% ao mes de uma taxa nominal de 36% ao ano', () => {
-      const result = TaxaJuros.norminalParaEfetivo(36, 12);
+      const resultado = TaxaJuros.norminalParaEfetivo(36, 12);
 
-      const expected = 3;
+      const esperado = 3;
 
-      result.should.be.equal(expected);
+      resultado.should.be.equal(esperado);
     });
   });
 
   describe('.anualParaMensal', () => {
     it('retorna 0.72% ao mes de uma taxa anual de 9% ao ano', () => {
-      const result = TaxaJuros.anualParaMensal(9);
+      const resultado = TaxaJuros.anualParaMensal(9);
 
-      const expected = 0.72;
+      const esperado = 0.72;
 
-      result.should.be.equal(expected);
+      resultado.should.be.equal(esperado);
     });
   });
 });

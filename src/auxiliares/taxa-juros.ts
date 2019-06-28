@@ -8,8 +8,8 @@ export class TaxaJuros {
   static anualParaMensal(taxaAnual: number): number {
     const real = taxaAnual / 100;
 
-    const result =  Math.pow(1 + real, 1 / 12) - 1;
+    const resultado =  Math.pow(1 + real, 1 / 12) - 1;
 
-    return Numerico.round(result * 100);
+    return Numerico.arredondar(resultado * 100);
   }
 }

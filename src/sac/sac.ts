@@ -16,17 +16,17 @@ export class SAC {
   }
 
   amortizacao(): number {
-    return Numerico.round((this.financiado / this.meses));
+    return Numerico.arredondar((this.financiado / this.meses));
   }
 
   jurosSobreSaldoDevedor(parcelasPagas: number): number {
-    return Numerico.round(
+    return Numerico.arredondar(
       (this.jurosMensalPerc / 100) *
       (this.financiado - (parcelasPagas * this.amortizacao())));
   }
 
   valorParcela(n: number): number {
-    return Numerico.round(this.amortizacao() + this.jurosSobreSaldoDevedor(n));
+    return Numerico.arredondar(this.amortizacao() + this.jurosSobreSaldoDevedor(n));
   }
 
   tabela(): Financiamento[] {

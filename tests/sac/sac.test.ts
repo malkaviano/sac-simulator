@@ -71,7 +71,7 @@ describe('SAC', () => {
     it('deve retornar uma tabela com 20 parcelas', () => {
       const sac = new SAC(110500, 0.72, 20);
 
-      const expected: Financiamento[] = [
+      const esperado: Financiamento[] = [
         { n:1,	parcela: 6320.60,	amortizacao: 5525.00,	juros: 795.60,	devedor: 104975.00 },
         { n:2,	parcela: 6280.82,	amortizacao: 5525.00,	juros: 755.82,	devedor: 99450.00 },
         { n:3,	parcela: 6241.04,	amortizacao: 5525.00,	juros: 716.04,	devedor: 93925.00 },
@@ -94,7 +94,7 @@ describe('SAC', () => {
         { n:20,	parcela: 5564.78,	amortizacao: 5525.00,	juros: 39.78,	devedor: 0.00 },
       ];
 
-      sac.tabela().should.be.eql(expected);
+      sac.tabela().should.be.eql(esperado);
     });
   });
 });
